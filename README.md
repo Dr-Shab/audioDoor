@@ -2,7 +2,7 @@
 
 A nice little gadget to welcome you or any guests when entering your home with a snippet from your favourite song or any kind of sound.  
   
-**_NOTE:_** Requirements, Wiring, etc. adopted from alexus37/hg2gDoor with some additions.
+**_NOTE:_** Requirements, Wiring, etc. adopted from [alexus37/hg2gDoor](https://github.com/alexus37/hg2gDoor) with some additions.
 
 ## Requirements 
 
