@@ -16,10 +16,9 @@ The wiring is super easy and does not require any soldering. In my case, I neede
 
 Connect to the PI via ssh and clone the repository. In my case the name of the Pi is galaxy.
 
-```bash
     ssh pi@galaxy.local
-	git clone https://github.com/Dr-Shab/audioDoor.git
-```
+    git clone https://github.com/Dr-Shab/audioDoor.git
+
 
 ## Code overview
 
@@ -29,10 +28,8 @@ The whole code required is basically in the file `main.py` and it loads all the 
 
 If you want to add the script to the autostart folder run:
 
-```bash
-    crontab -e
-```
+`crontab -e`
 
 and add the following lines
 
-`@reboot python3 /home/pi/hg2gDoor/main.py >>/home/pi/log.txt 2>&1 &`
+`@reboot python3 /home/pi/audioDoor/main.py 2>&1 &`
