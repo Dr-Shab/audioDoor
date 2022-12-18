@@ -1,8 +1,10 @@
 # The Raspberry Welcome: Automated Home Audio Greetings
 
-A nice little gadget to welcome you or any guests when entering your home with a snippet from your favourite song or any kind of sound.
+A nice little gadget to welcome you or any guests when entering your home with a snippet from your favourite song or any kind of sound.  
+  
+**_NOTE_** Requirements, Wiring, etc. adopted from alexus37/hg2gDoor with some additions.
 
-## Requirements **_NOTE_** Adopted from alexus37/hg2gDoor
+## Requirements 
 
 Let me first share my shopping list required for this project. First, you need a [Raspberry Pi 3 b+](https://www.amazon.com/ELEMENT-Element14-Raspberry-Pi-Motherboard/dp/B07P4LSDYV) (overkill, but I had one laying around) and a [door sensor switch](https://pixelelectric.com/mc-38-wired-door-sensor-switch/) to be able to determine if the door is open or not. Additionally, you need some kind of speaker. I wanted to try out this [one](https://www.monkmakes.com/pi_speaker_kit/), but I guess any speaker that has an AUX cord will do.
 
