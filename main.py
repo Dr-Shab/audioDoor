@@ -1,43 +1,56 @@
-#!/usr/bin/python
-import os
 import RPi.GPIO as GPIO
 import time
+import random
+import os
 import pygame
+import logging
 from random import randint
 
-def play_sound(file_name, vol=100.0):
+
+def play_sound(audio_file, vol=100.0):
     pygame.mixer.init()
     pygame.mixer.music.set_volume(1.0)
-    pygame.mixer.music.load(file_name)
+    pygame.mixer.music.load(audio_file)
     pygame.mixer.music.play()
     while pygame.mixer.music.get_busy() == True:
         continue
 
-# Set Broadcom mode so we can address GPIO pins by number.
-GPIO.setmode(GPIO.BCM)
+# log testing
+logging.basicConfig(filename='/home/pi/Desktop/door/example.log', 
+			level=logging.DEBUG, format= '%(asctime)s.%(msecs)03d %(levelname)s %(module)s - %(funcName)s: %(message)s',
+    			datefmt='%Y-%m-%d %H:%M:%S',)
 
-# consts
-DIR = os.path.dirname(os.path.abspath(__file__))
+
+music_dir = "/home/pi/Desktop/door/audio_files/"
+all_mp3 = [os.path.join(music_dir, f)
+           for f in os.listdir(music_dir) if f.endswith('.mp3')]
+
+logging.info('working dir: ' + str(os.getcwd()))
+
 DOOR_SENSOR_PIN = 18
-NUMBER_OF_AUDIO_FILES = len([name for name in os.listdir(f'{DIR}/audio/') if os.path.isfile(f'{DIR}/audio/{name}')])
-print(f'Found {NUMBER_OF_AUDIO_FILES} mp3 files')
 
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 isOpen = False
 oldIsOpen = False
 
-# Set up the door sensor pin.
-GPIO.setup(DOOR_SENSOR_PIN, GPIO.IN, pull_up_down = GPIO.PUD_UP)
-
 while True:
     oldIsOpen = isOpen
-
-    isOpen = GPIO.input(DOOR_SENSOR_PIN)
+    isOpen = GPIO.input(DOOR_SENSOR_PIN) == False
     # only play sound if door opens
     if (isOpen != oldIsOpen and isOpen):
-        print('Change detected: play sound')
-        id = randint(0, NUMBER_OF_AUDIO_FILES - 1)
-        play_sound(f'{DIR}/audio/sigh_{id}.mp3')
+        logging.info('Change detected: play sound')
+        song = random.choice(all_mp3)
+        logging.info(str(song))
+        play_sound(song)
+#     else:
+#         time.sleep(0.5)
+#         print('No change')
+    elif GPIO.input(18):
+#        logging.info("Closed")
+        time.sleep(0.5)
 
-    else:
+    elif GPIO.input(18) == False:
+#        print("Open")
         time.sleep(0.5)
