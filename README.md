@@ -1,8 +1,8 @@
-# Hitchhikers guide to galaxy door
+# The Raspberry Welcome: Automated Home Audio Greetings
 
-The first time I watched the movie Hitchhiker's Guide to the galaxy I had a great laugh. Especially the part where they enter the Space ship with the sighting doors. Check it out [here](https://www.youtube.com/watch?v=jn3Vv6VYdxw). Anyway, I immediately thought how hard can it be to make this happen in the world of minicomputers and cheap sensors. So I gave it a go.
+A nice little gadget to welcome you or any guests when entering your home with a snippet from your favourite song or any kind of sound.
 
-## Requirements
+## Requirements **_NOTE_** Adopted from alexus37/hg2gDoor
 
 Let me first share my shopping list required for this project. First, you need a [Raspberry Pi 3 b+](https://www.amazon.com/ELEMENT-Element14-Raspberry-Pi-Motherboard/dp/B07P4LSDYV) (overkill, but I had one laying around) and a [door sensor switch](https://pixelelectric.com/mc-38-wired-door-sensor-switch/) to be able to determine if the door is open or not. Additionally, you need some kind of speaker. I wanted to try out this [one](https://www.monkmakes.com/pi_speaker_kit/), but I guess any speaker that has an AUX cord will do.
 
