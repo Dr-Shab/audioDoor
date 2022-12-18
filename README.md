@@ -37,4 +37,4 @@ and add the following lines
 ## Downloading the sounds
 
 If you wish to have an interface where you can download sounds from youtube directly to your raspberry, the following repository is for you:  
-[Dr-Shab/UtubeToDoor/](https://github.com/Dr-Shab/UtubeToDoor)
+[Dr-Shab/UtubeToDoor](https://github.com/Dr-Shab/UtubeToDoor)
