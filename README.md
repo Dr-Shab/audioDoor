@@ -18,7 +18,7 @@ Connect to the PI via ssh and clone the repository. In my case the name of the P
 
 ```bash
     ssh pi@galaxy.local
-	git clone git@github.com:alexus37/hg2gDoor.git
+	git clone https://github.com/Dr-Shab/audioDoor.git
 ```
 
 ## Code overview
