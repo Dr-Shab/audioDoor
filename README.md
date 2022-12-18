@@ -6,7 +6,7 @@ A nice little gadget to welcome you or any guests when entering your home with a
 
 ## Requirements 
 
-Let me first share my shopping list required for this project. First, you need a [Raspberry Pi 3 b+](https://www.amazon.com/ELEMENT-Element14-Raspberry-Pi-Motherboard/dp/B07P4LSDYV) (overkill, but I had one laying around) and a [door sensor switch](https://pixelelectric.com/mc-38-wired-door-sensor-switch/) to be able to determine if the door is open or not. Additionally, you need some kind of speaker. I wanted to try out this [one](https://www.monkmakes.com/pi_speaker_kit/), but I guess any speaker that has an AUX cord will do.
+Let me first share my shopping list required for this project. First, you need a [Raspberry Pi 3 b+](https://www.amazon.com/ELEMENT-Element14-Raspberry-Pi-Motherboard/dp/B07P4LSDYV) (or any Raspberry with an audio jack or bluetooth capability) and a [door sensor switch](https://pixelelectric.com/mc-38-wired-door-sensor-switch/) to be able to determine if the door is open or not. Additionally, you need some kind of speaker. I wanted to try out this [one](https://www.monkmakes.com/pi_speaker_kit/), but I guess any speaker that has an AUX cord will do. If you plan to connect via bluetooth either your speaker supports it or you need an addiotional bluetooth adapter, which is then connected via AUX to the speaker.
 
 ## Wiring
 
