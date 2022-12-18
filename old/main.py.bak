@@ -1,0 +1,55 @@
+import RPi.GPIO as GPIO
+import time
+import random
+import os
+import pygame
+from random import randint
+
+def play_sound(audio_files, vol=100.0):
+    pygame.mixer.init()
+    pygame.mixer.music.set_volume(1.0)
+    pygame.mixer.music.load(audio_files)
+    pygame.mixer.music.play()
+    while pygame.mixer.music.get_busy() == True:
+        continue
+    
+DIR = os.path.dirname(os.path.abspath(__file__))
+DOOR_SENSOR_PIN = 18
+NUMBER_OF_AUDIO_FILES =  len([name for name in os.listdir('./audio_files')])
+print(NUMBER_OF_AUDIO_FILES)
+
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+isOpen = False
+oldIsOpen = False
+
+name = "Leon"
+
+print("Hello"+ name)
+
+while True:
+    
+    oldIsOpen = isOpen
+    isOpen = GPIO.input(DOOR_SENSOR_PIN)== False
+    # only play sound if door opens
+    if (isOpen != oldIsOpen and isOpen):
+        print('Change detected: play sound')
+        id = randint(0, NUMBER_OF_AUDIO_FILES - 1)
+        play_sound(f'{DIR}/audio_files/audio_sigh_{id}.mp3')
+        
+#     else:
+#         time.sleep(0.5)
+#         print('No change')
+    elif GPIO.input(18):
+         print("Closed")
+         time.sleep(0.5)
+        
+    elif GPIO.input(18) ==False:
+         print("Open")
+         time.sleep(0.5)
+        
+        
+
+
+    
