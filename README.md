@@ -33,3 +33,8 @@ If you want to add the script to the autostart folder run:
 and add the following lines
 
 `@reboot python3 /home/pi/audioDoor/main.py 2>&1 &`
+
+## Downloading the sounds
+
+If you wish to have an interface where you can download sounds from youtube directly to your raspberry, the following repository is for you:
+[Simple Web Interface for downloading and managing your sounds](https://github.com/Dr-Shab/UtubeToDoor)
